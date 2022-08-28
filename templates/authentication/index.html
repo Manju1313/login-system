@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>authentication</title>
+    <style>
+        body{
+	
+        background-color: magenta;
+        color: red;
+		background-image:url(https://media.istockphoto.com/photos/eastern-bluebirds-male-and-female-picture-id183412466?k=20&m=183412466&s=612x612&w=0&h=xaDRkk-cq7jZglzGO-UTn8Y0tNMHqFBnI5-tIzM68c0=);
+		background-size:linear;
+		background-repeat:no-repeat ;
+		background-position:unset;
+		background-attachment: initial;
+
+        }
+
+
+	
+	</style>
+</head>
+<body>
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}alert-dismissible fade show" role="alert">
+        <strong>message: </strong>{{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+        <span aria-hidden="true">&times;;</span>
+    </button>
+    </div>
+    {% endfor %}
+
+    <h2>welcome to Manoj Kumar web site </h2>
+
+
+    {% if user.is_authenticated %}
+    <h3>Hello {{ fname }}</h3>
+    <h4>you're logged in Successfully </h4>
+    
+    <button type="submit"><a href="/signup">signout</a></button>
+    {% else %}
+
+    <button type="submit"><a href="/signin">sigin</a></button>     
+    <button type="submit"><a href="/signout">signout</a></button>
+    {% endif %}
+
+    <script src="" async defer></script>
+
+
+</body>
+</html>
